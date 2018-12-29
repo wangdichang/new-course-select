@@ -1,11 +1,26 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+gradeone:
+  course: one
+  user: wangdichang
+  grade: 60
 
-# This model initially had no columns defined.  If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+gradethree:
+  course: three
+  user: wangdichang
+
+<% 15.times do |n| %>
+grade_<%= n %>:
+  course: one
+  user: <%= "student_#{n}" %>
+<% end %>
+
+<% (15...29).each do |n| %>
+grade_<%= n %>:
+  course: two
+  user: <%= "student_#{n}" %>
+<% end %>
+
+<% (30...44).each do |n| %>
+grade_<%= n %>:
+  course: three
+  user: <%= "student_#{n}" %>
+<% end %>

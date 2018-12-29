@@ -4,8 +4,9 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
+Spring2018:
+  info: "2018年春季学期"
 # column: value
-#
-two: {}
+Autumn2018:
+  info: "2018年秋季学期"
 #  column: value

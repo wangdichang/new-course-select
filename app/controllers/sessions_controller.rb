@@ -2,8 +2,8 @@ class SessionsController < ApplicationController
   include SessionsHelper
 
   def create
-    user = User.find_by(email: login_params[:email].downcase)
-    if user && user.authenticate(login_params[:password])
+    user = User.find_by(email: params[:session][:email].downcase)
+    if user && user.authenticate(params[:session][:password])
       log_in user
       params[:session][:remember_me] == '1' ? remember_user(user) : forget_user(user)
       flash= {:info => "欢迎回来: #{user.name} :)"}
@@ -14,7 +14,6 @@ class SessionsController < ApplicationController
   end
 
   def new
-
   end
 
   def destroy
@@ -22,8 +21,4 @@ class SessionsController < ApplicationController
     redirect_to root_url
   end
 
-  private
-  def login_params
-    params.require(:session).permit(:email, :password)
-  end
 end

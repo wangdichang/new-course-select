@@ -4,8 +4,39 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+
+John:
+  name: 田彤
+  email: student1@test.com
+  admin: true
+  password_digest: <%= User.digest('password') %>
+
+wangdichang:
+  name: 王迪昌
+  email: wangdichang@gmail.com
+  num: 2018E8009007
+  major: 动力工程
+  department: 工程科学学院
+  password_digest: <%= User.digest('password') %>
+
+teacherluo:
+  name: 罗铁坚
+  email: teacher4@test.com
+  teacher: true
+  department: 计算机与控制学院
+  password_digest: <%= User.digest('password') %>
+
+teacherhu:
+  name: 胡伟武
+  email: teacher5@test.com
+  teacher: true
+  department: 计算机与控制学院
+  password_digest: <%= User.digest('password') %>
+
+<% (0..45).each do |n| %>
+student_<%= n %>:
+  name: <%= "user#{n}" %>
+  email: <%= "user#{n}@example.com" %>
+  department: 计算机与控制学院
+  password_digest: <%= User.digest('password') %>
+<% end %>
