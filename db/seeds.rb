@@ -52,7 +52,7 @@ User.create(
     email: "admin@test.com",
     num: "2018E8009061007",
     major: "动力工程",
-    department: "工程���学学院",
+    department: "工程科学学院",
     password: "password",
     password_confirmation: "password",
     admin: true

@@ -1,4 +1,7 @@
 RailsAdmin.config do |config|
+  
+  config.parent_controller = "::ApplicationController"
+  
 
   # config.main_app_name = ["Cool app", "BackOffice"]
   # or something more dynamic
@@ -17,7 +20,7 @@ RailsAdmin.config do |config|
   # config.navigation_static_label = "My Links"
 
   # == Authenticate ==
-  config.authorize_with do
+ config.authorize_with do
     if !current_user.admin
       redirect_to main_app.root_url, flash: {:danger => '请先以管理员身份登陆'}
     end
